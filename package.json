@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "npx jest -c jest.config.unit.js",
-    "test:integration": "npx jest -c jest.config.integration.js"
+    "test:integration": "npx jest -c jest.config.integration.js",
+    "prepare": "husky install"
   },
   "author": "Mauro Swincik Jr",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "husky": "^7.0.4",
     "jest": "^27.4.3",
     "mock-express-request": "^0.2.2",
     "mock-express-response": "^0.3.0",

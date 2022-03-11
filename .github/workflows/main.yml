@@ -6,8 +6,6 @@ name: Main Workflow
 on:
   push:
     branches: [ main, hml ]
-  pull_request:
-    branches: [ main, hml ]
 
 jobs:
   run-unit-tests:
@@ -75,6 +73,7 @@ jobs:
         chmod u+x ./kustomize
 
     # Deploy the Docker image to the GKE cluster
-    - name: Deploy
+    - name: Deploy HML
+      if: ${{ github.ref_name == 'hml' }}
       run: |-
         kubectl rollout restart deployment poc-deploy-hml

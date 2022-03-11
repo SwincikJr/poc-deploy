@@ -12,4 +12,4 @@ jobs:
 
     steps:
       - name: checking
-        run: echo "test ok"
+        run: echo ${{ github.ref }}

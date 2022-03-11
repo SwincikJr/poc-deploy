@@ -11,4 +11,4 @@ on:
 
 jobs:
   run-unit-tests:
-    uses: SwincikJr/poc-deploy/.github/workflows/run-unit-tests.yml@${{ github.ref }}
+    uses: SwincikJr/poc-deploy/.github/workflows/run-unit-tests.yml@${{github.head_ref}}

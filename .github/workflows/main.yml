@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 'latest' ]
+        node-version:
+        - 'latest'
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v2
@@ -25,6 +26,7 @@ jobs:
     - run: npm install
     - run: npm run test:unit
   build-and-push-docker-image:
+    needs: run-unit-tests
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU

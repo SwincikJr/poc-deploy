@@ -6,10 +6,8 @@ on:
       - 'feat/push-docker'
 
 jobs:
-  docker:
-
+  build-and-push-docker-image:
     runs-on: ubuntu-latest
-
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -24,5 +22,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: swincikjr/poc-deploy:test
+          tags: swincikjr/poc-deploy:${{ github.ref_name }}
         

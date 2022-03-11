@@ -1,0 +1,15 @@
+name: Push Docker Test
+
+on:
+  push:
+    branches:
+      - 'feat/push-docker'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checking
+        run: echo "test ok"

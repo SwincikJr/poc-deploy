@@ -1,0 +1,11 @@
+node_modules
+package-lock.json
+jest.config.integration.js
+jest.config.unit.js
+README.md
+Dockerfile
+.gitignore
+.dockerignore
+tests
+.husky
+.github

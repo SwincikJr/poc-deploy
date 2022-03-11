@@ -13,6 +13,6 @@ jobs:
   test-name:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${GITHUB_REF#refs/heads/}
+      - run: echo ${{ GITHUB_REF#refs/heads/ }}
   run-unit-tests:
-    uses: 'SwincikJr/poc-deploy/.github/workflows/run-unit-tests.yml@${GITHUB_REF#refs/heads/}'
+    uses: SwincikJr/poc-deploy/.github/workflows/run-unit-tests.yml@${{ GITHUB_REF#refs/heads/ }}

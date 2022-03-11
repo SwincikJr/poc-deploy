@@ -10,5 +10,7 @@ on:
     branches: [ main, hml, 'feat/push-docker' ]
 
 jobs:
-  run-unit-tests:
-    uses: SwincikJr/poc-deploy/.github/workflows/run-unit-tests.yml@${{github.base_ref}}
+  test-name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{github.base_ref}}

@@ -8,7 +8,8 @@ module.exports = {
       '!jest.config.{unit,integration}.js',
       '!index.js',
       '!**/tests/**',
-      '!**/node_modules/**'
+      '!**/node_modules/**',
+      '!src/crash.js'
   ],
   testEnvironment: 'node',
   coverageThreshold: {

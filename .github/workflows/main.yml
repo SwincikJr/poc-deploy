@@ -43,12 +43,15 @@ jobs:
 
   deploy-hml:
     name: Deploy HML
+    runs-on: ubuntu-latest
     needs: build-and-push-docker-image
     if: ${{ github.ref_name == 'hml' }}
-    uses: garygrossgarten/github-action-ssh@release
-    with:
-      command: sudo docker pull swincikjr/poc-deploy:hml && sudo docker-compose -f poc-deploy-hml.yml up --force-recreate -d
-      host: ${{ secrets.GCLOUD_VM_HOST }}
-      username: ${{ secrets.GCLOUD_VM_USERNAME }}
-      passphrase: ${{ secrets.GCLOUD_VM_PASSPHRASE }}
-      privateKey: ${{ secrets.GCLOUD_VM_PRIVATE_KEY }}
+    steps:
+      - name: Run SSH
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: sudo docker pull swincikjr/poc-deploy:hml && sudo docker-compose -f poc-deploy-hml.yml up --force-recreate -d
+          host: ${{ secrets.GCLOUD_VM_HOST }}
+          username: ${{ secrets.GCLOUD_VM_USERNAME }}
+          passphrase: ${{ secrets.GCLOUD_VM_PASSPHRASE }}
+          privateKey: ${{ secrets.GCLOUD_VM_PRIVATE_KEY }}

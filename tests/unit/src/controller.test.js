@@ -12,6 +12,6 @@ describe('controller unit test', () => {
         controller({}, resMock)
 
         expect(resMock.statusCode).toBe(200)
-        expect(resMock._getJSON().message).toBe('Esta é uma aplicação para testes de deploy. - v11')
+        expect(resMock._getJSON().message).toBe('Esta é uma aplicação para testes de deploy. - v12')
     })
 })
